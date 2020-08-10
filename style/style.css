@@ -76,24 +76,54 @@ h2 {
 /* --------------------------------------- */
 
 .table1,
-.table2 {
+.table2,
+.table3 {
   color: black;
   margin: auto;
-  border: 1px solid red;
   width: 70%;
   margin-bottom: 1%;
   text-align: left;
 }
 
-.table1 th {
-  width: 100%;
+.table1 tr {
+  width: 10%;
+}
+
+.table1 tr td {
+  width: 30%;
+  border: 1px solid red;
+  -webkit-text-stroke-width: thin;
+}
+.table2 tr td {
+  width: 25%;
+  border: 1px solid red;
+}
+
+.table3 tr td {
+  border: 1px solid red;
+}
+
+.declaro {
+  width: 70%;
   text-align: center;
 }
-.table1 tr {
-  width: 30%;
+
+.headerImages {
+  display: flex;
+  justify-content: space-around;
 }
-.table2 tr {
+
+#ue,
+#gj,
+#gob,
+#cc {
   width: 25%;
+  height: 25%;
+  margin: 1%;
+}
+
+#gj {
+  width: 7%;
 }
 
 /* ----------------------------------------- */

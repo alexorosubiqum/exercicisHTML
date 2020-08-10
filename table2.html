@@ -16,6 +16,20 @@
   </head>
   <body style="background-color: white; color: black;">
     <header class="header">
+      <div class="headerImages">
+        <img id="ue" src="./assets/ue.jpg" alt="Unión Europea" />
+        <img
+          id="gj"
+          src="./assets/garantiaJuvenil.jpg"
+          alt="Garantía Juvenil"
+        />
+        <img id="gob" src="./assets/gobierno.jpg" alt="Gobierno de España" />
+        <img
+          id="cc"
+          src="./assets/camaraComercio.jpeg"
+          alt="Cámara de comercio"
+        />
+      </div>
       <div>
         <h2>ANEXO 7</h2>
         <h1>FORMULARIO DE INSCRIPCIÓN PICE</h1>
@@ -24,39 +38,48 @@
     </header>
 
     <table class="table1">
-      <th>DATOS BÁSICOS</th>
       <tr>
-        <td>NOMBRE</td>
+        <td colspan="4" style="text-align: center;">DATOS BÁSICOS</td>
       </tr>
       <tr>
-        <td>APELLIDOS</td>
+        <td colspan="1">NOMBRE</td>
+        <td colspan="4"></td>
       </tr>
       <tr>
-        <td>FECHA NACIMIENTO</td>
+        <td colspan="1">APELLIDOS</td>
+        <td colspan="4"></td>
       </tr>
       <tr>
-        <td>NIF / NIE</td>
+        <td colspan="1">FECHA NACIMIENTO</td>
+        <td colspan="4"></td>
       </tr>
       <tr>
-        <td>DOMICILIO</td>
+        <td colspan="1">NIF / NIE</td>
+        <td colspan="4"></td>
       </tr>
       <tr>
-        <td>
-          LOCALIDAD
-        </td>
+        <td colspan="1">DOMICILIO</td>
+        <td colspan="4"></td>
       </tr>
       <tr>
-        <td>CÓDIGO POSTAL</td>
+        <td colspan="1">LOCALIDAD</td>
+        <td colspan="4"></td>
       </tr>
       <tr>
-        <td>TELÉFONO</td>
+        <td colspan="1">CÓDIGO POSTAL</td>
+        <td colspan="4"></td>
       </tr>
       <tr>
-        <td>E-MAIL</td>
+        <td colspan="1">TELÉFONO</td>
+        <td colspan="4"></td>
+      </tr>
+      <tr>
+        <td colspan="1">E-MAIL</td>
+        <td colspan="4"></td>
       </tr>
       <tr>
         <td>CÁMARA DE COMERCIO</td>
-        <td style="text-align: center;">GIRONA</td>
+        <td style="text-align: center;" colspan="4">GIRONA</td>
       </tr>
       <tr>
         <td colspan="2">
@@ -70,6 +93,7 @@
           Desempleado <br />
           (Inscrito en SEPE)
         </td>
+        <td></td>
 
         <td>Menos de 6 meses inscrito</td>
         <td>Entre 6 y 12 meses inscrito</td>
@@ -79,42 +103,49 @@
 
     <table class="table2">
       <tr>
-        <td rowspan="14">
+        <td width="15%" rowspan="14" style="-webkit-text-stroke-width: thin;">
           NIVEL MÁXIMO DE ESTUDIOS ALCANZADOS <br />
           (marcar una opción)
         </td>
       </tr>
 
       <tr>
-        <td>Sin enseñanza primaria</td>
+        <td colspan="2">Sin enseñanza primaria</td>
+        <td></td>
       </tr>
       <tr>
-        <td>Enseñanza primaria</td>
+        <td colspan="2">Enseñanza primaria</td>
+        <td></td>
       </tr>
       <tr>
-        <td>1º 2º 3º 4º ESO</td>
+        <td colspan="2">1º 2º 3º 4º ESO</td>
+        <td></td>
       </tr>
       <tr>
-        <td>FP Básica</td>
+        <td colspan="2">FP Básica</td>
+        <td></td>
       </tr>
       <tr>
-        <td>FP Grado medio</td>
+        <td colspan="2">FP Grado medio</td>
+        <td></td>
       </tr>
       <tr>
-        <td>Bachillerato</td>
+        <td colspan="2">Bachillerato</td>
+        <td></td>
       </tr>
 
       <tr>
-        <td>
+        <td colspan="2">
           Enseñanza postsecundaria no tericaria (certificados profesionalidad
           nivel 3)
         </td>
+        <td></td>
       </tr>
 
-      <tr rowspan="3">
-        <td>Educación superior</td>
-      </tr>
       <tr>
+        <td rowspan="3" style="vertical-align: text-top;">
+          Educación superior
+        </td>
         <td>FP Grado Superior</td>
         <td></td>
       </tr>
@@ -126,12 +157,58 @@
         <td>Licenciatura universitaria o similar (más de 240 créditos ECTS)</td>
         <td></td>
       </tr>
+
+      <tr>
+        <td>Postgrado universitaro</td>
+        <td colspan="2"></td>
+      </tr>
+      <tr>
+        <td>Enseñanzas doctorado</td>
+        <td colspan="2"></td>
+      </tr>
     </table>
 
-    <footer>
+    <table class="table3">
+      <tr>
+        <td>
+          <p>OTROS DATOS DEL JOVEN</p>
+          <p style="color: red;">(CUMPLIMENTACIÓN VOLUNTARIA)</p>
+          <p style="color: red;">Marcar las opciones que correspondan</p>
+        </td>
+        <td>
+          ¿Personas sin hogar o afectadas por la exclusión en materia de
+          vivienda?
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          ¿Discapacidad reconocida?
+        </td>
+        <td>¿Inmigrante, participante de prigen extrangero o minoría?</td>
+      </tr>
+    </table>
+
+    <div class="declaro">
+      <p>DECLARO QUE:</p>
+      <p style="text-decoration: underline;">
+        A) Jóvenes que se encuentran en sus cuatro primeros meses de inscripción
+        en el SNGJ
+      </p>
+      <div>
+        <p>
+          <input type="checkbox" />Me encuentro inscrito como beneficiario en el
+          Sistema Nacional de Garantía Juvenil <br />
+          desde el día __/__/____, sin que hayan transcurrido cuatro meses desde
+          dicha fecha.
+        </p>
+      </div>
+    </div>
+
+    <!-- <footer>
       <div class="nav">
         <a href="./index.html">Go back to Home page</a>
       </div>
-    </footer>
+    </footer> -->
   </body>
 </html>
