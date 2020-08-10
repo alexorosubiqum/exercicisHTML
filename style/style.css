@@ -29,3 +29,46 @@ h2 {
   margin: 1%;
   padding: 1%;
 }
+
+.nav a:hover {
+  background-color: black;
+}
+
+.dog,
+.cat {
+  margin: auto;
+  width: 20%;
+  border-radius: 10px;
+  display: block;
+  margin-top: 5%;
+  margin-bottom: 1%;
+}
+
+.animals img {
+  margin-top: 5%;
+  margin-bottom: 1%;
+  width: 20%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
+}
+
+.brands {
+  margin-top: 5%;
+  margin-bottom: 1%;
+}
+
+.logos {
+  width: 10%;
+  border-radius: 10px;
+}
+
+.productImage {
+  width: 30%;
+  border-radius: 10px;
+  margin-top: 5%;
+  margin-bottom: 1%;
+}
