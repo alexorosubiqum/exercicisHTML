@@ -72,3 +72,36 @@ h2 {
   margin-top: 5%;
   margin-bottom: 1%;
 }
+
+/* --------------------------------------- */
+
+.table1,
+.table2 {
+  color: black;
+  margin: auto;
+  border: 1px solid red;
+  width: 70%;
+  margin-bottom: 1%;
+  text-align: left;
+}
+
+.table1 th {
+  width: 100%;
+  text-align: center;
+}
+.table1 tr {
+  width: 30%;
+}
+.table2 tr {
+  width: 25%;
+}
+
+/* ----------------------------------------- */
+
+.dies {
+  color: black;
+}
+
+.hores {
+  color: red;
+}
