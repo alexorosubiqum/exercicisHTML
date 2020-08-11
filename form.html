@@ -1,0 +1,155 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FORMULARIS</title>
+    <link rel="stylesheet" href="/style/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="/assets/shortcut.png" type="image/x-icon" />
+  </head>
+  <body>
+    <form class="form" action="" method="">
+      <!-- <label for="nom">Nom:</label>
+      <input name="Nom" type="text" placeholder="Nom" id="nom" size="15" />
+      <br />
+      <label for="cognoms">Cognoms:</label>
+      <input
+        type="text"
+        name="Cognoms"
+        placeholder="Cognoms"
+        id="cognoms"
+        size="10"
+      />
+      <br />
+      <label for="edat">Edat:</label>
+      <input type="number" name="Edat" placeholder="Edat" id="edat" size="15" />
+      <br />
+      <label for="password">Contrasenya:</label>
+      <input
+        type="password"
+        name="Password"
+        placeholder="Contrasenya"
+        id="password"
+        size="7"
+      />
+      <br />
+      <label for="data">Data de naixament:</label>
+      <input type="datetime-local" name="Data" id="data" min="2002" />
+      <br />
+      <label for="color">Color:</label>
+      <input type="color" name="color" id="color" />
+      <br />
+      <label for="email">Email:</label>
+      <input name="email" type="url" id="email" />
+      <br />
+      <textarea name="text" id="text" cols="30" rows="10"></textarea>
+      <br />
+      <input type="checkbox" name="privacitat" id="privacitat" />
+      <label for="privacitat"
+        >Accepto que feu servir les meves dades per spam</label
+      >
+      <br />
+      <input type="radio" name="horari" id="mati" value="mati" />
+      <label for="mati">Matí</label>
+      <br />
+      <input type="radio" name="horari" id="tarda" value="tarda" />
+      <label for="tarda">Tarda</label>
+      <br />
+      <input type="radio" name="horari" id="nit" value="nit" />
+      <label for="nit">Nit</label>
+      <br />
+      <label for="dia">Dia:</label>
+      <select name="dia" id="dia">
+        <option value="dilluns">Dilluns</option>
+        <option value="dimarts">Dimarts</option>
+        <option value="dimecres">Dimecres</option>
+        <option value="dijous">Dijous</option>
+        <option value="divendres">Divendres</option>
+      </select>
+      <br />
+      <input type="submit" value="Enviar" name="enviar" id="enviar" />
+      <br />
+      <input type="reset" value="Reset" />
+      <br />
+      <input type="button" value="Like" /> -->
+
+      <!-- nom, adreça, tel, mail, (quant, prod ,import x 3) total, pagament(contrarrembolso, visa, paypal), politica privacitat,  -->
+
+      <label for="nom">Nom i cognoms:</label>
+      <input type="text" name="nom" id="nom" />
+      <br />
+      <label for="direccio">Adreça</label>
+      <input type="text" name="direccio" id="direccio" />
+      <br />
+      <label for="tel">Teléfon:</label>
+      <input type="tel" name="tel" id="tel" />
+      <br />
+      <label for="email">Email:</label>
+      <input type="email" />
+      <table>
+        <th>Quantitat</th>
+        <th>Producte</th>
+        <th>Import</th>
+        <tr>
+          <td><input type="number" name="quant" id="quant" /></td>
+          <td>
+            <select name="productes" id="productes">
+              <option value="patates">Patates</option>
+              <option value="aigua">Aigua</option>
+              <option value="carn">Carn</option>
+            </select>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><input type="number" name="quant" id="quant" /></td>
+          <td>
+            <select name="productes" id="productes">
+              <option value="patates">Patates</option>
+              <option value="aigua">Aigua</option>
+              <option value="carn">Carn</option>
+            </select>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><input type="number" name="quant" id="quant" /></td>
+          <td>
+            <select name="productes" id="productes">
+              <option value="patates">Patates</option>
+              <option value="aigua">Aigua</option>
+              <option value="carn">Carn</option>
+            </select>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Total:</td>
+          <td></td>
+        </tr>
+      </table>
+      <input type="radio" name="pagament" id="visa" value="visa" />
+      <label for="visa">Visa</label>
+      <br />
+      <input
+        type="radio"
+        name="pagament"
+        id="Contrareembolso"
+        value="Contrareembolso"
+      />
+      <label for="Contrareembolso">Contrareembolso</label>
+      <br />
+      <input type="radio" name="pagament" id="paypal" value="paypal" />
+      <label for="paypal">Paypal</label>
+      <br />
+      <hr width="20%" align="left" />
+      <input type="checkbox" name="politica" id="politica" />
+      <label for="politica">Accepto la política de vendes</label>
+      <br />
+      <input type="button" value="Fer comanda" />
+    </form>
+  </body>
+</html>

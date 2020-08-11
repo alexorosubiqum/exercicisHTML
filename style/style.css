@@ -73,8 +73,6 @@ h2 {
   margin-bottom: 1%;
 }
 
-/* --------------------------------------- */
-
 .table1,
 .table2,
 .table3 {
@@ -111,6 +109,9 @@ h2 {
 .headerImages {
   display: flex;
   justify-content: space-around;
+  width: 60%;
+  align-items: center;
+  margin: auto;
 }
 
 #ue,
@@ -126,12 +127,18 @@ h2 {
   width: 7%;
 }
 
-/* ----------------------------------------- */
-
 .dies {
   color: black;
 }
 
 .hores {
   color: red;
+}
+
+footer {
+  margin-bottom: 1%;
+}
+
+.form {
+  margin: auto;
 }
