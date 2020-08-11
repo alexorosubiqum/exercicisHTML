@@ -28,6 +28,7 @@ h2 {
   border-radius: 10px;
   margin: 1%;
   padding: 1%;
+  justify-content: space-evenly;
 }
 
 .nav a:hover {
@@ -139,6 +140,28 @@ footer {
   margin-bottom: 1%;
 }
 
-.form {
+.brands {
   margin: auto;
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.krytac a {
+  color: white;
+}
+
+.marui a {
+  color: blue;
+}
+
+.lct a {
+  color: green;
+}
+
+.krytac a,
+.marui a,
+.lct a {
+  text-decoration: none;
 }

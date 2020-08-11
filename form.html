@@ -78,17 +78,19 @@
 
       <!-- nom, adreça, tel, mail, (quant, prod ,import x 3) total, pagament(contrarrembolso, visa, paypal), politica privacitat,  -->
 
-      <label for="nom">Nom i cognoms:</label>
-      <input type="text" name="nom" id="nom" />
-      <br />
-      <label for="direccio">Adreça</label>
-      <input type="text" name="direccio" id="direccio" />
-      <br />
-      <label for="tel">Teléfon:</label>
-      <input type="tel" name="tel" id="tel" />
-      <br />
-      <label for="email">Email:</label>
-      <input type="email" />
+      <div class="clientData">
+        <label for="nom">Nom i cognoms:</label>
+        <input type="text" name="nom" id="nom" />
+        <br />
+        <label for="direccio">Adreça</label>
+        <input type="text" name="direccio" id="direccio" />
+        <br />
+        <label for="tel">Teléfon:</label>
+        <input type="tel" name="tel" id="tel" />
+        <br />
+        <label for="email">Email:</label>
+        <input type="email" />
+      </div>
       <table>
         <th>Quantitat</th>
         <th>Producte</th>
@@ -133,24 +135,27 @@
           <td></td>
         </tr>
         <tr>
-          <td>Total:</td>
+          <td style="text-align: end;" colspan="2">Total:</td>
           <td></td>
         </tr>
       </table>
-      <input type="radio" name="pagament" id="visa" value="visa" />
-      <label for="visa">Visa</label>
-      <br />
-      <input
-        type="radio"
-        name="pagament"
-        id="Contrareembolso"
-        value="Contrareembolso"
-      />
-      <label for="Contrareembolso">Contrareembolso</label>
-      <br />
-      <input type="radio" name="pagament" id="paypal" value="paypal" />
-      <label for="paypal">Paypal</label>
-      <br />
+      <div>
+        <p style="margin-bottom: 0;">Métode de pagament:</p>
+        <input type="radio" name="pagament" id="visa" value="visa" />
+        <label for="visa">Visa</label>
+        <br />
+        <input
+          type="radio"
+          name="pagament"
+          id="Contrareembolso"
+          value="Contrareembolso"
+        />
+        <label for="Contrareembolso">Contrareembolso</label>
+        <br />
+        <input type="radio" name="pagament" id="paypal" value="paypal" />
+        <label for="paypal">Paypal</label>
+        <br />
+      </div>
       <hr width="20%" align="left" />
       <input type="checkbox" name="politica" id="politica" />
       <label for="politica">Accepto la política de vendes</label>
