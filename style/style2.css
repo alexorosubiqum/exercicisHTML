@@ -1,0 +1,65 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: "Exo", sans-serif;
+}
+table {
+  width: 70%;
+  border-radius: 10px;
+  border-color: white;
+  margin: auto;
+  padding: 1%;
+  text-transform: uppercase;
+}
+
+thead tr td {
+  background-color: yellow;
+  color: black;
+}
+
+table tr {
+  padding: 1%;
+}
+table tr td {
+  padding: 1%;
+  text-align: center;
+}
+
+.temporades td:nth-child(1) {
+  background-color: grey;
+}
+.temporades td:nth-child(2) {
+  background-color: hotpink;
+}
+.temporades td:nth-child(3) {
+  background-color: lime;
+}
+.temporades td:nth-child(4) {
+  background-color: orangered;
+}
+.temporades td:nth-child(5) {
+  background-color: blueviolet;
+}
+.temporades td:nth-child(6) {
+  background-color: hotpink;
+}
+.temporades td:nth-child(7) {
+  background-color: lime;
+}
+.temporades td:nth-child(8) {
+  background-color: orangered;
+}
+.temporades td:nth-child(9) {
+  background-color: blueviolet;
+}
+.temporades td:nth-child(10) {
+  background-color: grey;
+}
+
+.b,
+.g,
+.t,
+.l td td :nth-child(1) {
+  background-color: cyan;
+  color: black;
+}
