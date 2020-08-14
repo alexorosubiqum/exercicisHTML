@@ -59,7 +59,12 @@ table tr td {
 .b,
 .g,
 .t,
-.l td td :nth-child(1) {
+.l td {
   background-color: cyan;
+  color: black;
+}
+
+.total td {
+  background-color: chartreuse;
   color: black;
 }
