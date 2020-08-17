@@ -19,6 +19,9 @@ h2 {
 .nav {
   background-color: rgb(50, 0, 0);
   text-align: center;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  position: sticky;
 }
 
 .nav a {
@@ -164,4 +167,73 @@ footer {
 .marui a,
 .lct a {
   text-decoration: none;
+}
+
+#capa1 {
+  margin: auto;
+  background-color: blue;
+  width: 400px;
+  border-radius: 10px;
+  padding: 1%;
+  z-index: 1;
+}
+
+#capa2 {
+  margin: auto;
+  background-color: purple;
+  width: 400px;
+  border-radius: 10px;
+  padding: 1%;
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  z-index: 2;
+}
+
+#capa1,
+#capa2 {
+  margin: 1%;
+}
+
+#contingut {
+  margin: auto;
+  width: 70%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1%;
+  border-radius: 10px;
+}
+
+#container {
+  background-color: black;
+  color: white;
+  width: 90%;
+  height: 600px;
+  margin: 0 auto;
+  padding: 1%;
+  margin-top: 1%;
+  text-align: center;
+  border: solid;
+  border-color: yellowgreen;
+  border-radius: 10px;
+  justify-items: auto;
+}
+
+#dog,
+#cat {
+  width: 50%;
+  border-radius: 10px;
+}
+
+.catDiv,
+.dogDiv {
+  padding: 1%;
+  background-color: yellowgreen;
+  border-radius: 10px;
+  width: 350px;
+  color: black;
+  text-align: center;
+  margin: 20px;
+  position: relative;
+  float: left;
+  height: 350px;
 }
