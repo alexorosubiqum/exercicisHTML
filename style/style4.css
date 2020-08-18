@@ -1,0 +1,220 @@
+body {
+  font: 100% Lucida Sans, Verdana;
+}
+/* 
+div {
+  width: 400px;
+  height: 200px;
+  box-sizing: border-box;
+}
+
+#capa1 {
+  background-color: blueviolet;
+  padding: 1%;
+}
+#capa2 {
+  background-color: crimson;
+  padding: 1%;
+} */
+/* #container {
+  width: 300px;
+  background-color: #ffffcc;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.prop {
+  width: 100px;
+  margin: 10px;
+  background-color: #ff3333;
+  font-size: 40px;
+  line-height: 150%;
+  text-align: center;
+} */
+
+/* .cat {
+  width: 300px;
+  border-radius: 10px;
+  display: block;
+  margin: 10 auto;
+  width: 300px;
+}
+
+.p {
+  width: 300px;
+  background-color: grey;
+  border-radius: 10px;
+  padding: 1%;
+  margin: 10 auto;
+} */
+
+/* #pestanya {
+  width: 40px;
+  height: 200px;
+  background-color: rgb(100, 0, 0);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  position: absolute;
+  right: 0px;
+  top: 100px;
+}
+
+#pestanya:hover {
+  width: 100px;
+  right: 0px;
+}
+
+p {
+  margin: auto;
+  padding: 1%;
+  text-align: center;
+} */
+
+/* .main {
+  width: 70%;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.pestanyaTop1,
+.pestanyaTop2,
+.pestanyaTop3 {
+  text-align: center;
+  background-color: rgb(100, 0, 0);
+  width: 200px;
+  height: 50px;
+  margin: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  top: -50px;
+  margin-left: -100px;
+}
+p {
+  color: white;
+}
+
+.pestanyaTop1:hover {
+  height: 100px;
+  top: 0px;
+}
+.pestanyaTop2:hover {
+  height: 100px;
+  top: 0px;
+}
+.pestanyaTop3:hover {
+  height: 100px;
+  top: 0px;
+} */
+
+/* #div2 {
+  width: 200px;
+  height: 50px;
+  background-color: rgb(50, 0, 0);
+
+  color: white;
+  position: absolute;
+  top: 250px;
+  left: 50%;
+  margin-left: -100px;
+  border-radius: 10px;
+  top: -10px;
+  transition: top 0.5s;
+}
+#div2:hover {
+  height: 100px;
+  color: cyan;
+} */
+
+/* a {
+  margin: auto;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  transition: padding 1s, color 1s, background-color 1s, border-radius 1s;
+}
+
+a:hover {
+  padding: 1%;
+  background-color: darkred;
+  color: white;
+  border-radius: 10px;
+} */
+
+.overCat {
+  width: 500px;
+  height: 700px;
+  border-radius: 10px;
+  margin: auto;
+  text-align: center;
+}
+.over {
+  display: flex;
+  flex-wrap: wrap;
+}
+.over1,
+.over2,
+.over3,
+.over4 {
+  position: absolute;
+  background-color: yellow;
+  width: 250px;
+  height: 350px;
+  border: solid 1px black;
+  text-align: center;
+  margin: auto;
+}
+
+.over1:hover,
+.over2:hover,
+.over3:hover,
+.over4:hover {
+  color: white;
+  background-color: darkorchid;
+}
+.over1 {
+  border-top-left-radius: 10px;
+  transition: color 2s, background-color 2s, margin-top 2s, margin-left 2s;
+}
+
+.over2 {
+  margin-top: 350px;
+  border-bottom-left-radius: 10px;
+  transition: color 2s, background-color 2s, margin-top 2s, margin-left 2s;
+}
+.over3 {
+  margin-left: 250px;
+  border-top-right-radius: 10px;
+  transition: color 2s, background-color 2s, margin-top 2s, margin-left 2s;
+}
+
+.over4 {
+  margin-left: 250px;
+  margin-top: 350px;
+  border-bottom-right-radius: 10px;
+  transition: color 2s, background-color 2s, margin-top 2s, margin-left 2s;
+}
+
+.over1:hover {
+  margin-top: -200px;
+  margin-left: -200px;
+}
+
+.over2:hover {
+  margin-top: 500px;
+  margin-left: -200px;
+}
+
+.over3:hover {
+  margin-top: -200px;
+  margin-left: 400px;
+}
+
+.over4:hover {
+  margin-top: 600px;
+  margin-left: 400px;
+}
+
+.mainOver {
+  margin: 0 auto;
+}
