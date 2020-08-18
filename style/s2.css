@@ -1,0 +1,10 @@
+body {
+  font-family: Arial;
+  background-color: #d14836;
+  line-height: 20px;
+}
+
+main {
+  position: relative;
+  overflow: auto;
+}
