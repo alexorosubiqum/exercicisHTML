@@ -1,0 +1,40 @@
+body {
+  font-family: "Hind", sans-serif;
+}
+
+h1 {
+  color: black;
+
+  background-color: red;
+  width: 600px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px black;
+  transition: color 1s, background-color 1s, box-shadow 1s;
+  margin: auto;
+}
+
+h1:hover {
+  color: white;
+  background-color: black;
+  box-shadow: -5px 5px 5px rgba(255, 0, 0, 0.5);
+}
+
+div {
+  margin: auto;
+  border-radius: 5px;
+  margin: 10px auto;
+  background-color: red;
+  color: black;
+  padding: 1%;
+  max-width: 600px;
+}
+
+.p {
+  margin: 10px auto;
+  background-color: rgba(230, 0, 0, 0.1);
+  width: 30%;
+  padding: 1%;
+  border-radius: 5px;
+  min-width: 300px;
+}

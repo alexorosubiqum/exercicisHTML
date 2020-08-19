@@ -1,0 +1,62 @@
+/* .container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 90%;
+}
+
+.prod {
+  position: relative;
+  float: left;
+  width: 20%;
+  background-color: red;
+  margin: 10px;
+  padding: 1%;
+  border-radius: 5px;
+}
+@media screen and (max-width: 600px) {
+  .prod {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .prod {
+    width: 90%;
+  }
+} */
+
+.imagesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+}
+
+.catImg,
+.dogImg,
+.birdImg {
+  position: relative;
+  float: left;
+  width: 400px;
+  border-radius: 5px;
+  margin: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .catImg,
+  .dogImg,
+  .birdImg {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 1210px) {
+  .birdImg {
+    display: none;
+  }
+}
+@media screen and (max-width: 810px) {
+  .dogImg {
+    display: none;
+  }
+}

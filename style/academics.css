@@ -1,0 +1,21 @@
+body {
+  font-family: museo-sans, Helvetica, sans-serif;
+  line-height: 1.5;
+  font-weight: 300;
+  color: #000;
+  font-size: 1.25rem;
+}
+
+header {
+  background-color: #003a70;
+}
+
+.header {
+  width: 70%;
+  text-align: center;
+  color: white;
+}
+.navs a {
+  text-decoration: none;
+  color: white;
+}
