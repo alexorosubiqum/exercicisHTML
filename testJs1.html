@@ -1,0 +1,104 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TEST JS 1</title>
+  </head>
+  <body>
+    <!-- <input type="button" value="Suma" onclick="sumar(10,2)" />
+    <input
+      type="button"
+      value="Resta"
+      onclick="restar(document.getElementById('num1').value, document.getElementById('num2').value)"
+    />
+    <input type="button" value="Salúdame" onclick="saludar('Bon dia!!')" />
+    <input
+      type="button"
+      value="Despídete"
+      onclick="despedir('Hasta la próxima')"
+    />
+    <br />
+    <input type="text" name="num1" id="num1" />
+    <input type="text" name="num2" id="num2" />
+    <br />
+    <input type="button" value="Contador" onclick="contar()" />
+    <br />
+    <input type="button" value="Reload" onclick="(location.reload())" /> -->
+
+    <input type="button" value="Mostrar data" onclick="mostrarData()" />
+
+    <br />
+    <button type="button" onClick="resta()">Resta</button>
+    <p>Result: <span id="resta">10</span></p>
+
+    <script>
+      //   console.log("hello there");
+      //   console.log("general kenobi");
+      //   window.alert("ah, the negotiator");
+      //   document.write("<h2>hello</h2>");
+      //   function saludar(missatge) {
+      //     window.alert(missatge);
+      //   }
+
+      //   function despedir(missatge) {
+      //     window.alert(missatge);
+      //   }
+
+      //   function sumar(num1, num2) {
+      //     window.alert(num1 + num2);
+      //   }
+
+      //   function restar(num1, num2) {
+      //     window.alert(num1 - num2);
+      //   }
+
+      //   var quant = 0;
+      //   function contar() {
+      //     quant = quant++;
+      //     console.log(quant);
+      //   }
+
+      var clicksResta = 10;
+      function resta() {
+        clicksResta -= 1;
+        document.getElementById("resta").innerHTML = clicksResta;
+      }
+
+      function mostrarData() {
+        var mesos = [
+          "Gener",
+          "Febrer",
+          "Març",
+          "Abril",
+          "Maig",
+          "Juny",
+          "Juliol",
+          "Agost",
+          "Setembre",
+          "Octubre",
+          "Novembre",
+          "Desembre",
+        ];
+        var d = new Date();
+        var dia = d.getDate();
+        var hour = d.getHours();
+        var mins = d.getMinutes();
+        var sec = d.getSeconds();
+        var month = d.getMonth();
+        var year = d.getFullYear();
+        var time = hour + ":" + mins + ":" + sec;
+
+        window.alert(
+          "Avui és dia " +
+            dia +
+            " de " +
+            mesos[month] +
+            " de " +
+            year +
+            " i són les " +
+            time
+        );
+      }
+    </script>
+  </body>
+</html>
