@@ -7,17 +7,27 @@
       body {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
       }
-      #resultat {
-        background-color: black;
-        color: white;
+      #resultat,
+      #prod1,
+      #prod2,
+      #prod3 {
         border: solid;
+        border-color: black;
         border-radius: 5px;
-        width: 40%;
-        height: 40%;
+        width: 300px;
+        height: 300px;
         margin: auto;
         margin-top: 1%;
         padding: 1%;
         text-align: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .prods {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 1%;
       }
     </style>
   </head>
@@ -62,8 +72,50 @@
     <input type="text" id="temp" />
     <input type="button" value="Check Temp" onclick="checkTemp()" />
     <br />
+    <div class="selector">
+      <form>
+        <select name="Vehicle" id="select" onchange="selector()">
+          <option value="bici">Bici</option>
+          <option value="patinet">Patinet</option>
+          <option value="moto">Moto</option>
+        </select>
+      </form>
+    </div>
 
-    <div id="resultat"></div>
+    <div class="carta">
+      <form>
+        <label for="primers">Primers:</label>
+        <select name="Primers" id="primer" onchange="menu()">
+          <option value="sopa">Sopa</option>
+          <option value="amanida">Amanida</option>
+          <option value="picapica">Pica Pica</option>
+        </select>
+      </form>
+      <form>
+        <label for="segons">Segons:</label>
+        <select name="Segons" id="segon" onchange="menu()">
+          <option value="carn">Carn</option>
+          <option value="peix">Peix</option>
+          <option value="paella">Paella </option>
+        </select>
+      </form>
+      <form>
+        <label for="postres">Postres:</label>
+        <select name="Postres" id="postre" onchange="menu()">
+          <option value="gelat">Gelat</option>
+          <option value="fruita">Fruita</option>
+          <option value="galetes">Galetes</option>
+        </select>
+      </form>
+    </div>
+
+    <!-- <div id="resultat"></div> -->
+    <div class="prods">
+      <div id="prod1"></div>
+      <div id="prod2"></div>
+      <div id="prod3"></div>
+    </div>
+
     <script>
       //   console.log("hello there");
       //   console.log("general kenobi");
@@ -143,6 +195,7 @@
           window.alert("Hola, " + nom);
         }
       }
+
       function checkPassword() {
         var password = document.getElementById("textPassword").value;
         if (password == "123") {
@@ -151,6 +204,7 @@
           window.alert("Password unavaliable, try another one");
         }
       }
+
       var res = document.getElementById("resultat");
 
       function checkTemp() {
@@ -161,6 +215,55 @@
           res.innerHTML = "Fa fred" + '<img src="./assets/frio.jpg">';
         } else {
           res.innerHTML = "S'està bé" + '<img src="./assets/okTemp.png">';
+        }
+      }
+      function selector() {
+        var prod = document.getElementById("select").value;
+        var res = document.getElementById("resultat");
+        if (prod == "bici") {
+          res.style.backgroundImage = "url('./assets/bici.jpg')";
+        } else if (prod == "patinet") {
+          res.style.backgroundImage = "url('./assets/patinet.jpg')";
+        } else if (prod == "moto") {
+          res.style.backgroundImage = "url('./assets/moto.jpg')";
+        }
+        console.log(prod);
+      }
+
+      function menu() {
+        var primer = document.getElementById("primer").value;
+        var segon = document.getElementById("segon").value;
+        var postre = document.getElementById("postre").value;
+        var prod1 = document.getElementById("prod1");
+        var prod2 = document.getElementById("prod2");
+        var prod3 = document.getElementById("prod3");
+
+        ///////PRIMERS//////
+        if (primer == "sopa") {
+          prod1.style.backgroundImage = "url('./assets/sopa.jpg')";
+        } else if (primer == "amanida") {
+          prod1.style.backgroundImage = "url('./assets/amanida-grega.png')";
+        } else if (primer == "picapica") {
+          prod1.style.backgroundImage = "url('./assets/picapica.jpg')";
+        }
+
+        ///////SEGONS//////
+        if (segon == "carn") {
+          prod2.style.backgroundImage = "url('./assets/carn.jpg')";
+        } else if (segon == "peix") {
+          prod2.style.backgroundImage = "url('./assets/peix.jpg')";
+        } else if (segon == "paella") {
+          prod2.style.backgroundImage = "url('./assets/paella.jpg')";
+        }
+
+        ///////POSTRES//////
+
+        if (postre == "gelat") {
+          prod3.style.backgroundImage = "url('./assets/gelat.jpg')";
+        } else if (postre == "fruita") {
+          prod3.style.backgroundImage = "url('./assets/fruita.jpeg')";
+        } else if (postre == "galetes") {
+          prod3.style.backgroundImage = "url('./assets/galetes.png')";
         }
       }
     </script>
