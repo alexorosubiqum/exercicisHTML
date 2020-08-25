@@ -3,6 +3,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TEST JS 1</title>
+    <style>
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      #resultat {
+        background-color: black;
+        color: white;
+        border: solid;
+        border-radius: 5px;
+        width: 40%;
+        height: 40%;
+        margin: auto;
+        margin-top: 1%;
+        padding: 1%;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <!-- <input type="button" value="Suma" onclick="sumar(10,2)" />
@@ -30,7 +47,23 @@
     <br />
     <button type="button" onClick="resta()">Resta</button>
     <p>Result: <span id="resta">10</span></p>
+    <br />
+    <label for="textNom">Nom:</label>
+    <input type="text" id="textNom" />
+    <br />
+    <input type="button" value="Saludar" onclick="saludar()" />
+    <br />
+    <label for="textPassword">Password:</label>
+    <input type="password" id="textPassword" />
+    <br />
+    <input type="button" value="Check Password" onclick="checkPassword()" />
+    <br />
+    <label for="temp">Temp:</label>
+    <input type="text" id="temp" />
+    <input type="button" value="Check Temp" onclick="checkTemp()" />
+    <br />
 
+    <div id="resultat"></div>
     <script>
       //   console.log("hello there");
       //   console.log("general kenobi");
@@ -98,6 +131,37 @@
             " i són les " +
             time
         );
+      }
+
+      function saludar() {
+        var nom = document.getElementById("textNom").value;
+        if (nom == "Alex") {
+          window.alert("¡Ostia soy yo!");
+        } else if (nom == "") {
+          window.alert("Give me a name please");
+        } else {
+          window.alert("Hola, " + nom);
+        }
+      }
+      function checkPassword() {
+        var password = document.getElementById("textPassword").value;
+        if (password == "123") {
+          window.alert("Password accepted!");
+        } else {
+          window.alert("Password unavaliable, try another one");
+        }
+      }
+      var res = document.getElementById("resultat");
+
+      function checkTemp() {
+        var temp = document.getElementById("temp").value;
+        if (temp > 29) {
+          res.innerHTML = "Fa calor" + '<img src="./assets/calor.jpg">';
+        } else if (temp < 18) {
+          res.innerHTML = "Fa fred" + '<img src="./assets/frio.jpg">';
+        } else {
+          res.innerHTML = "S'està bé" + '<img src="./assets/okTemp.png">';
+        }
       }
     </script>
   </body>
