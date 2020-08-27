@@ -6,6 +6,10 @@
     <style>
       body {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
+        /* background-image: url(./assets/foodBG3.jpg); */
+        background-repeat: no-repeat;
+        background-position-y: center;
+        background-size: cover;
       }
       #resultat,
       #prod1,
@@ -15,19 +19,35 @@
         border-color: black;
         border-radius: 5px;
         width: 300px;
-        height: 300px;
+        height: 150px;
         margin: auto;
         margin-top: 1%;
         padding: 1%;
         text-align: center;
-        background-size: cover;
+        background-size: 100%;
         background-repeat: no-repeat;
+        /* background-image: url(./assets/cookieMonster.gif); */
+        background-position-y: center;
+      }
+      #prod1 form,
+      #prod2 form,
+      #prod3 form {
+        padding: 2%;
+        width: fit-content;
+        text-align: center;
+        margin: auto;
+        border: solid;
+        border-radius: 5px;
+        border-color: black;
+        border-width: 1px;
+        background-color: rgba(255, 255, 255, 0.7);
       }
 
-      .prods {
+      .carta {
         display: flex;
         flex-wrap: wrap;
-        margin: 1%;
+        margin: 1% auto;
+        margin-top: 10%;
       }
     </style>
   </head>
@@ -52,7 +72,7 @@
     <br />
     <input type="button" value="Reload" onclick="(location.reload())" /> -->
 
-    <input type="button" value="Mostrar data" onclick="mostrarData()" />
+    <!-- <input type="button" value="Mostrar data" onclick="mostrarData()" />
 
     <br />
     <button type="button" onClick="resta()">Resta</button>
@@ -80,41 +100,83 @@
           <option value="moto">Moto</option>
         </select>
       </form>
+    </div> -->
+    <!-- 
+    <div class="carta">
+      <div id="prod1">
+        <form>
+          <label for="primers">Primers:</label>
+          <select name="Primers" id="primer" onchange="menu()">
+            <option value="sopa">Sopa</option>
+            <option value="amanida">Amanida</option>
+            <option value="picapica">Pica Pica</option>
+          </select>
+        </form>
+      </div>
+
+      <div id="prod2">
+        <form>
+          <label for="segons">Segons:</label>
+          <select name="Segons" id="segon" onchange="menu()">
+            <option value="carn">Carn</option>
+            <option value="peix">Peix</option>
+            <option value="paella">Paella </option>
+          </select>
+        </form>
+      </div>
+
+      <div id="prod3">
+        <form>
+          <label for="postres">Postres:</label>
+          <select name="Postres" id="postre" onchange="menu()">
+            <option value="gelat">Gelat</option>
+            <option value="fruita">Fruita</option>
+            <option value="galetes">Galetes</option>
+          </select>
+        </form>
+      </div>
+    </div> -->
+
+    <div class="gelats">
+      <form>
+        <label for="gust">Gust:</label>
+        <select name="gust" id="gust" onchange="gelats()">
+          <option value="maduixa">Maduixa</option>
+          <option value="xocolata">Xocolata</option>
+          <option value="vainilla">Vainilla</option>
+          <option value="llimona">Llimona</option>
+        </select>
+      </form>
+
+      <form>
+        <label for="tipus">Tipus: </label>
+        <select name="tipus" id="tipus" onchange="gelats()">
+          <option value="cucurutxo">Cucurutxo</option>
+          <option value="terrina">Terrina</option>
+          <option value="especial">Especial</option>
+        </select>
+      </form>
+
+      <form>
+        <label for="mida">Mida:</label>
+        <select name="mida" id="mida" onchange="gelats()">
+          <option value="petit">Petit</option>
+          <option value="mitja">Mitjà</option>
+          <option value="gran">Gran</option>
+        </select>
+      </form>
     </div>
 
     <div class="carta">
-      <form>
-        <label for="primers">Primers:</label>
-        <select name="Primers" id="primer" onchange="menu()">
-          <option value="sopa">Sopa</option>
-          <option value="amanida">Amanida</option>
-          <option value="picapica">Pica Pica</option>
-        </select>
-      </form>
-      <form>
-        <label for="segons">Segons:</label>
-        <select name="Segons" id="segon" onchange="menu()">
-          <option value="carn">Carn</option>
-          <option value="peix">Peix</option>
-          <option value="paella">Paella </option>
-        </select>
-      </form>
-      <form>
-        <label for="postres">Postres:</label>
-        <select name="Postres" id="postre" onchange="menu()">
-          <option value="gelat">Gelat</option>
-          <option value="fruita">Fruita</option>
-          <option value="galetes">Galetes</option>
-        </select>
-      </form>
+      <div id="resultat"></div>
     </div>
 
     <!-- <div id="resultat"></div> -->
-    <div class="prods">
+    <!-- <div class="prods">
       <div id="prod1"></div>
       <div id="prod2"></div>
       <div id="prod3"></div>
-    </div>
+    </div> -->
 
     <script>
       //   console.log("hello there");
@@ -164,6 +226,15 @@
           "Novembre",
           "Desembre",
         ];
+        var dies = [
+          "Diumenge",
+          "Dilluns",
+          "Dimarts",
+          "Dimecres",
+          "Dijous",
+          "Divendres",
+          "Dissabte",
+        ];
         var d = new Date();
         var dia = d.getDate();
         var hour = d.getHours();
@@ -171,18 +242,37 @@
         var sec = d.getSeconds();
         var month = d.getMonth();
         var year = d.getFullYear();
+        var diaSetmana = d.getDay();
         var time = hour + ":" + mins + ":" + sec;
+        console.log(dia);
 
-        window.alert(
-          "Avui és dia " +
-            dia +
-            " de " +
-            mesos[month] +
-            " de " +
-            year +
-            " i són les " +
-            time
-        );
+        if (month == 7 || 9) {
+          window.alert(
+            "Avui és " +
+              dies[diaSetmana] +
+              " " +
+              dia +
+              " d' " +
+              mesos[month] +
+              " de " +
+              year +
+              " i són les " +
+              time
+          );
+        } else {
+          window.alert(
+            "Avui és " +
+              dies[diaSetmana] +
+              " " +
+              dia +
+              " de " +
+              mesos[month] +
+              " de " +
+              year +
+              " i són les " +
+              time
+          );
+        }
       }
 
       function saludar() {
@@ -264,6 +354,67 @@
           prod3.style.backgroundImage = "url('./assets/fruita.jpeg')";
         } else if (postre == "galetes") {
           prod3.style.backgroundImage = "url('./assets/galetes.png')";
+        }
+      }
+
+      var tauler = [
+        ["X", "0", "X", "0"],
+        ["X", "0", "0", "X"],
+        ["X", "X", "0", "X"],
+      ];
+
+      function gelats() {
+        var res = document.getElementById("resultat");
+        var gust = document.getElementById("gust").value;
+        var tipus = document.getElementById("tipus").value;
+        var mida = document.getElementById("mida").value;
+        var gelat = [
+          ["Cucurutxo de Maduixa", "Terrina de Maduixa", "Especial de Maduixa"],
+          [
+            "Cucurutxo de Xocolata",
+            "Terrina de Xocolata",
+            "Especial de Xocolata",
+          ],
+          [
+            "Cucurutxo de vainilla",
+            "Terrina de vainilla",
+            "Especial de vainilla",
+          ],
+          ["Cucurutxo de Llimona", "Terrina de Llimona", "Especial de Llimona"],
+        ];
+        /////////////////////////MADUIXA///////////////////////////////////
+        if (gust == "maduixa" && tipus == "cucurutxo") {
+          res.innerHTML = gelat[0][0];
+        } else if (gust == "maduixa" && tipus == "terrina") {
+          res.innerHTML = gelat[0][1];
+        } else if (gust == "maduixa" && tipus == "especial") {
+          res.innerHTML = gelat[0][2];
+        }
+
+        /////////////////////////XOCOLATA///////////////////////////////////
+        if (gust == "xocolata" && tipus == "cucurutxo") {
+          res.innerHTML = gelat[1][0];
+        } else if (gust == "xocolata" && tipus == "terrina") {
+          res.innerHTML = gelat[1][1];
+        } else if (gust == "xocolata" && tipus == "especial") {
+          res.innerHTML = gelat[1][2];
+        }
+
+        /////////////////////////VAINILLA///////////////////////////////////
+        if (gust == "vainilla" && tipus == "cucurutxo") {
+          res.innerHTML = gelat[2][0];
+        } else if (gust == "vainilla" && tipus == "terrina") {
+          res.innerHTML = gelat[2][1];
+        } else if (gust == "vainilla" && tipus == "especial") {
+          res.innerHTML = gelat[2][2];
+        }
+        /////////////////////////LLIMONA///////////////////////////////////
+        if (gust == "llimona" && tipus == "cucurutxo") {
+          res.innerHTML = gelat[3][0];
+        } else if (gust == "llimona" && tipus == "terrina") {
+          res.innerHTML = gelat[3][1];
+        } else if (gust == "llimona" && tipus == "especial") {
+          res.innerHTML = gelat[3][2];
         }
       }
     </script>
