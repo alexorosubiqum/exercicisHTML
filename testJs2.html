@@ -1,0 +1,268 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      /* table {
+        width: 600px;
+        border: solid 1px black;
+        border-radius: 5px;
+      } */
+      .capes {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 1% auto;
+        margin-top: 10%;
+      }
+      #capa0,
+      #capa1,
+      #capa2 {
+        width: 150px;
+        border: 1px solid black;
+        width: 200px;
+        height: 200px;
+        margin: 1% auto;
+        border-radius: 5px;
+      }
+
+      #pyr div {
+        margin: auto;
+      }
+    </style>
+    <title>TEST JS2</title>
+  </head>
+  <body>
+    <!-- <div class="capes">
+      <div id="capa0"></div>
+      <div id="capa1"></div>
+      <div id="capa2"></div>
+    </div> -->
+
+    <div id="pyr">
+      <div class="p0">
+        <label id="lp0" for="p0"></label>
+        <input type="text" id="p0" />
+        <br />
+      </div>
+      <div class="p1">
+        <label id="lp1" for="p1"></label>
+        <input type="text" id="p1" />
+        <br />
+      </div>
+      <div class="p2">
+        <label id="lp2" for="p2"></label>
+        <input type="text" id="p2" />
+        <br />
+      </div>
+      <div class="p3">
+        <label id="lp3" for="p3"></label>
+        <input type="text" id="p3" />
+        <br />
+      </div>
+      <div class="p4">
+        <label id="lp4" for="p4"></label>
+        <input type="text" id="p4" />
+        <br />
+      </div>
+      <div class="p5">
+        <label id="lp5" for="p5"></label>
+        <input type="text" id="p5" />
+        <br />
+      </div>
+      <div class="p6">
+        <label id="lp6" for="p6"></label>
+        <input type="text" id="p6" />
+        <br />
+      </div>
+      <div class="p7">
+        <label id="lp7" for="p7"></label>
+        <input type="text" id="p7" />
+        <br />
+      </div>
+      <div class="p8">
+        <label id="lp8" for="p8"></label>
+        <input type="text" id="p8" />
+        <br />
+      </div>
+      <div class="p9">
+        <label id="lp9" for="p9"></label>
+        <input type="text" id="p9" />
+        <br />
+      </div>
+      <div class="p10">
+        <label id="lp10" for="p10"></label>
+        <input type="text" id="p10" />
+        <br />
+      </div>
+      <div class="p11">
+        <label id="lp11" for="p11"></label>
+        <input type="text" id="p11" />
+        <br />
+      </div>
+      <div class="p12">
+        <label id="lp12" for="p12"></label>
+        <input type="text" id="p12" />
+        <br />
+      </div>
+      <div class="p13">
+        <label id="lp13" for="p13"></label>
+        <input type="text" id="p13" />
+        <br />
+      </div>
+      <div class="p14">
+        <label id="lp14" for="p14"></label>
+        <input type="text" id="p14" />
+        <br />
+      </div>
+      <div class="p15">
+        <label id="lp15" for="p15"></label>
+        <input type="text" id="p15" />
+        <br />
+      </div>
+      <div class="p16">
+        <label id="lp16" for="p16"></label>
+        <input type="text" id="p16" />
+        <br />
+      </div>
+      <div class="p17">
+        <label id="lp17" for="p17"></label>
+        <input type="text" id="p17" />
+        <br />
+      </div>
+      <div class="p18">
+        <label id="lp18" for="p18"></label>
+        <input type="text" id="p18" />
+        <br />
+      </div>
+      <div class="p19">
+        <label id="lp19" for="p19"></label>
+        <input type="text" id="p19" />
+        <br />
+      </div>
+    </div>
+    <script>
+      //   function table5() {
+      // var five = document.getElementById("five");
+      // var x = document.getElementById("x");
+      // var res = document.getElementById("res");
+      // console.log(five);
+      // for (five = 0; five < 10; five++) {
+      //   document.write(five);
+      // }
+      // for (x = 0; x < 10; x++) {
+      //   document.write("x");
+      // }
+      // for (res = 0; res < 10; res++) {
+      //   document.write(res.value);
+      // }
+      // for (i = 0; i <= 10; i++) {
+      //   document.write("<tr> <td>5</td>");
+      //   document.write("<td>" + i + "</td>");
+      //   document.write("<td>" + i * 5 + "</td></tr>");
+      // }
+      //   }
+      //   table5();
+
+      //   var jugadors = [
+      //     "Alex",
+      //     "Roberto",
+      //     "Anna",
+      //     "Juan",
+      //     "Des",
+      //     "Sali",
+      //     "Musta",
+      //     "Sabin",
+      //   ];
+      //   for (let i = 0; i < jugadors.length; i++) {
+      //     document.write(jugadors[i] + "</br>");
+      //   }
+
+      //   function fotos() {
+      //     var capa0 = document.getElementById("capa0");
+      //     var capa1 = document.getElementById("capa1");
+      //     var capa2 = document.getElementById("capa2");
+      //     var fotos = [
+      //       "img url(./assets/moto.jpg)",
+      //       "img url(./assets/bici.jpg)",
+      //       "img url(./assets/patinet.jpg)",
+      //     ];
+
+      //     capa0.innerHTML = fotos[0];
+      //     capa1.innerHTML = fotos[1];
+      //     capa2.innerHTML = fotos[2];
+      //     console.log(fotos);
+
+      //     capa0.style.backgroundImage = fotos[0];
+      //     capa1.style.backgroundImage = fotos[1];
+      //     capa2.style.backgroundImage = fotos[2];
+      //     console.log(fotos);
+      //   }
+      //   fotos();
+
+      function pyr() {
+        var p = [
+          "1. ¿Cuál es la parte más profunda de la corteza terrestre?",
+          "2. ¿Cuál es la capital de Marruecos?",
+          "3. ¿En qué país se encuentra el río Po?",
+          "4. ¿Cuál es el país más visitado del mundo?",
+          "5. ¿En qué países es oficial el quechua es lengua oficial nacional?",
+          "6. ¿En qué país se encuentra la península de Yucatán?",
+          "7. ¿Cuál es el océano que baña las aguas de Sri Lanka?",
+          "8. ¿Cuál es la montaña más alta del mundo?",
+          "9. ¿Qué nombre recibe un cowboy argentino?",
+          "10. ¿A qué dos continentes se debe la existencia del vudú?",
+          "11. Quién fue el autor español de la fábula de “la Hormiga y la Cigarra”?",
+          "12. ¿Qué pseudónimo usaba el escrito inglés Eric Arthur Blair?",
+          "13. ¿Cómo se llama el libro de Ray Bradbury en el que se queman libros?",
+          "14. ¿En qué manifestación artística se sacan moldes?",
+          "15. ¿Quién escribió “Poeta en Nueva York”?",
+          "16. ¿En qué ciudad comenzó y terminó Phileas Fogg su viaje alrededor del mundo?",
+          "17. ¿Quién era el campanero jorobado de Notre Dame?",
+          "18. ¿Con qué nombre firmaba Vincent Van Gogh sus pinturas?",
+          "19. ¿A qué tipo de instrumento pertenece la citara?",
+          "20. ¿En qué ciudad española se encuentra “La casa de las conchas”?",
+        ];
+        var r = [
+          "La fosa de las Marianas",
+          "Rabat",
+          "Italia",
+          "Francia",
+          "Perú, Ecuador y Bolivia",
+          "México",
+          "Índico",
+          "Everest",
+          "Gaucho",
+          "África y América",
+          "Félix María Samaniego",
+          "George Orwell",
+          "Fahrenheit 451",
+          "Escultura",
+          "Federico García Lorca",
+          "Londres",
+          "Quasimodo",
+          "Vincent",
+          "Cuerda",
+          "Salamanca",
+        ];
+
+        for (let i = 0; i < p.length; i++) {
+          var allP = p[i];
+          console.log(allP);
+        }
+
+        for (let l = 0; l < r.length; l++) {
+          var allR = r[l];
+          console.log(allR);
+        }
+
+        for (let x = 0; x < p.length; x++) {
+          var preguntes = document.getElementById("lp" + x);
+          console.log(preguntes);
+          preguntes.innerHTML = p[x];
+        }
+      }
+
+      pyr();
+    </script>
+  </body>
+</html>
