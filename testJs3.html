@@ -1,0 +1,168 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TEST JS 3</title>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      #buttons {
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+      }
+      #capes {
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+        float: center;
+      }
+      #capa1,
+      #capa2,
+      #capa3,
+      #capa4 {
+        width: 200px;
+        height: 200px;
+        margin: auto;
+        text-align: center;
+        border: 5px solid black;
+        border-radius: 5px;
+        background-color: rgba(185, 0, 0);
+        color: white;
+        font-size: large;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <form method="POST" action="" id="formulari">
+      <label for="textNom">Nom: </label>
+      <input type="text" name="nom" id="textNom" />
+      <br />
+
+      <label for="password">Password: </label>
+      <input type="password" name="pass" id="pass" />
+      <br />
+
+      <label for="email">Email: </label>
+      <input type="text" name="email" id="textEmail" />
+
+      <input type="button" value="Enviar" onclick="validar()" />
+      <br />
+    </form> -->
+    <!-- <form>
+      <label for="capa1buttonON"></label>
+      <input
+        id="capa1buttonON"
+        type="button"
+        value="Capa ON"
+        class="capa1buttonON"
+      />
+      <br />
+      <label for="capa1buttonOFF"></label>
+      <input
+        id="capa1buttonOFF"
+        type="button"
+        value="Capa OFF"
+        class="capa1buttonOFF"
+      />
+      <br />
+      <label for="capa1toggle"></label>
+      <input
+        id="capa1toggle"
+        type="button"
+        value="Capa TOGGLE"
+        class="capa1toggle"
+      />
+      <br />
+      <label for="capa1SlideToggle"></label>
+      <input
+        id="capa1SlideToggle"
+        type="button"
+        value="Capa SLIDE TOGGLE"
+        class="capa1SlideToggle"
+      />
+      <br />
+    </form>
+    <div id="capa1"></div> -->
+
+    <form>
+      <div id="buttons">
+        <input id="button1" type="button" value="1" />
+        <input id="button2" type="button" value="2" />
+        <input id="button3" type="button" value="3" />
+        <input id="button4" type="button" value="4" />
+      </div>
+    </form>
+
+    <div id="capes">
+      <div id="capa1">1</div>
+      <div id="capa2">2</div>
+      <div id="capa3">3</div>
+      <div id="capa4">4</div>
+    </div>
+
+    <script>
+      // function validar() {
+      //   var smallPizdiec = false;
+      //   var nasaHasBeenHacked = false;
+      //   var textNom = document.getElementById("textNom").value;
+      //   var textEmail = document.getElementById("textEmail").value;
+      //   if (textNom == "") {
+      //     window.alert("POSA EL NOM");
+      //   } else if (textNom.length < 3) {
+      //     window.alert("EL NOM HA DE TENIR MÍNIM 3 LLETRES");
+      //   }
+      // }
+      // var form = document.getElementById("formulari");
+      // if (smallPizdiec == false || nasaHasBeenHacked == true) {
+      //   formulari.submit();
+      // }
+      // if (
+      //   textEmail.indexOf("@") == -1 &&
+      //   textEmail.lastIndexOf(".") < textEmail.indexOf("@")
+      // ) {
+      //   window.alert("Invalid Email");
+      // }
+
+      // $("#capa1");
+      // $(".destacat");
+      // $("#capaprop h1");
+      // $(document).ready(function () {});
+      // $(function () {});
+
+      $(function () {
+        // $("#capa1buttonON").click(function () {
+        //   $("#capa1").fadeIn(1000);
+        // });
+        // $("#capa1buttonOFF").click(function () {
+        //   $("#capa1").fadeOut(1000);
+        // });
+        // $("#capa1toggle").click(function () {
+        //   $("#capa1").fadeToggle(2000);
+        // });
+        // $("#capa1SlideToggle").click(function () {
+        //   $("#capa1").slideToggle(1000);
+        // });
+
+        $("#button1").click(function () {
+          $("#capa1").fadeToggle(1000);
+        });
+        $("#button2").click(function () {
+          $("#capa2").fadeToggle(1000);
+        });
+        $("#button3").click(function () {
+          $("#capa3").fadeToggle(1000);
+        });
+        $("#button4").click(function () {
+          $("#capa4").fadeToggle(1000);
+        });
+      });
+    </script>
+  </body>
+</html>
