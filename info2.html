@@ -1,0 +1,80 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>INFO 2</title>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+      integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      /* .capa1 {
+        background-color: red;
+        margin: auto;
+        border: 3px solid black;
+        border-radius: 5px;
+        width: 300px;
+        height: 300px;
+        padding: 1%;
+        color: white;
+      } */
+    </style>
+  </head>
+  <body>
+    <script>
+      //   $(function () {
+      //     $("#button").click(function () {
+      //       $("#capa1").load("https://www.w3schools.com/jquery/demo_test.txt");
+      //     });
+      //   });
+
+      $(function () {
+        $("#button1").click(function () {
+          $.get("https://jsonplaceholder.typicode.com/posts/1", function (
+            data,
+            status
+          ) {
+            $(".h11").html(data.title);
+            $(".p1").html(data.body);
+          });
+        });
+        $("#button2").click(function () {
+          $.get("https://jsonplaceholder.typicode.com/posts/2", function (
+            data,
+            status
+          ) {
+            $(".h12").html(data.title);
+            $(".p2").html(data.body);
+          });
+        });
+      });
+    </script>
+    <!-- <input type="button" value="Button" id="button" />
+    <div class="capa1" id="capa1"></div> -->
+    <input type="button" value="Button" id="button1" />
+    <input type="button" value="Button" id="button2" />
+    <input type="button" value="Button" id="button3" />
+
+    <div id="capa1">
+      <h1 class="h11"></h1>
+      <p class="p1"></p>
+    </div>
+    <div id="capa2">
+      <h1 class="h12"></h1>
+      <p class="p2"></p>
+    </div>
+    <div id="capa3">
+      <h1 class="h13"></h1>
+      <p class="p3"></p>
+    </div>
+  </body>
+</html>
