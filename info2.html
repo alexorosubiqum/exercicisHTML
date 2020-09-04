@@ -27,6 +27,19 @@
         padding: 1%;
         color: white;
       } */
+
+      .targeta {
+        background-color: red;
+        color: black;
+        border: 1 solid black;
+        border-radius: 5px;
+        width: 300px;
+        height: 200px;
+        float: left;
+        position: relative;
+        padding: 1%;
+        margin: 10px;
+      }
     </style>
   </head>
   <body>
@@ -56,13 +69,42 @@
         //     $(".p2").html(data.body);
         //   });
         // });
+        // $("#buttonCrida").click(function () {
+        //   $.get("https://jsonplaceholder.typicode.com/photos/1", function (
+        //     data,
+        //     status
+        //   ) {
+        //     $("#h1Crida").html(data.title);
+        //     $("#imgCrida").attr("src", data.url)();
+        //   });
+        // });
 
-        $("#buttonCrida").click(function () {
-          $.get("https://jsonplaceholder.typicode.com/photos/1", function (
+        $("#buttonUsers").click(function () {
+          $.get("https://jsonplaceholder.typicode.com/users", function (
             data,
             status
           ) {
-            window.alert(data.title);
+            // window.alert(user.name);
+            for (let i = 0; i < data.length; i++) {
+              var usuari = data[i];
+              console.log(usuari);
+              // $("#capa1").append(usuari.name + "</br>");
+              $("#capa2").append(
+                "<div class='targeta'>" +
+                  "<p>" +
+                  usuari.name +
+                  "</p>" +
+                  "</br>" +
+                  "<p>" +
+                  usuari.email +
+                  "</p>" +
+                  "</br>" +
+                  "<p>" +
+                  usuari.phone +
+                  "</p>" +
+                  "</div>"
+              );
+            }
           });
         });
       });
@@ -85,6 +127,10 @@
       <h1 class="h13"></h1>
       <p class="p3"></p>
     </div> -->
-    <input type="button" value="Crida" id="buttonCrida" />
+    <!-- <input type="button" value="Crida" id="buttonCrida" />
+    <h1 id="h1Crida"></h1>
+    <img id="imgCrida" src="" alt="" /> -->
+    <input type="button" value="Users" id="buttonUsers" />
+    <div id="capa2"></div>
   </body>
 </html>
