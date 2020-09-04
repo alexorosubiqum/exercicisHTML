@@ -38,29 +38,38 @@
       //   });
 
       $(function () {
-        $("#button1").click(function () {
-          $.get("https://jsonplaceholder.typicode.com/posts/1", function (
+        // $("#button1").click(function () {
+        //   $.get("https://jsonplaceholder.typicode.com/posts/1", function (
+        //     data,
+        //     status
+        //   ) {
+        //     $(".h11").html(data.title);
+        //     $(".p1").html(data.body);
+        //   });
+        // });
+        // $("#button2").click(function () {
+        //   $.get("https://jsonplaceholder.typicode.com/posts/2", function (
+        //     data,
+        //     status
+        //   ) {
+        //     $(".h12").html(data.title);
+        //     $(".p2").html(data.body);
+        //   });
+        // });
+
+        $("#buttonCrida").click(function () {
+          $.get("https://jsonplaceholder.typicode.com/photos/1", function (
             data,
             status
           ) {
-            $(".h11").html(data.title);
-            $(".p1").html(data.body);
-          });
-        });
-        $("#button2").click(function () {
-          $.get("https://jsonplaceholder.typicode.com/posts/2", function (
-            data,
-            status
-          ) {
-            $(".h12").html(data.title);
-            $(".p2").html(data.body);
+            window.alert(data.title);
           });
         });
       });
     </script>
     <!-- <input type="button" value="Button" id="button" />
     <div class="capa1" id="capa1"></div> -->
-    <input type="button" value="Button" id="button1" />
+    <!-- <input type="button" value="Button" id="button1" />
     <input type="button" value="Button" id="button2" />
     <input type="button" value="Button" id="button3" />
 
@@ -75,6 +84,7 @@
     <div id="capa3">
       <h1 class="h13"></h1>
       <p class="p3"></p>
-    </div>
+    </div> -->
+    <input type="button" value="Crida" id="buttonCrida" />
   </body>
 </html>
