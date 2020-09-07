@@ -78,34 +78,83 @@
         //     $("#imgCrida").attr("src", data.url)();
         //   });
         // });
+        // $("#buttonUsers").click(function () {
+        //   $.get("https://jsonplaceholder.typicode.com/users", function (
+        //     data,
+        //     status
+        //   ) {
+        //     // window.alert(user.name);
+        //     for (let i = 0; i < data.length; i++) {
+        //       var usuari = data[i];
+        //       console.log(usuari);
+        //       // $("#capa1").append(usuari.name + "</br>");
+        //       $("#capa2").append(
+        //         "<div class='targeta'>" +
+        //           "<p>" +
+        //           usuari.name +
+        //           "</p>" +
+        //           "</br>" +
+        //           "<p>" +
+        //           usuari.email +
+        //           "</p>" +
+        //           "</br>" +
+        //           "<p>" +
+        //           usuari.phone +
+        //           "</p>" +
+        //           "</div>"
+        //       );
+        //     }
+        //   });
+        // });
+        // $("#buttonCapaNew").click(function () {
+        //   $.get("https://jsonplaceholder.typicode.com/users", function (
+        //     data,
+        //     status
+        //   ) {
+        //     var i = 0;
+        //     for (let i = 0; i < data.length; i++) {
+        //       var user = data[i];
+        //       $("#capaNew").append(user.name + "</br>");
+        //       $("#capaNew").append(user.email + "</br>");
+        //       $("#capaNew").append(
+        //         user.address.street +
+        //           " " +
+        //           user.address.suite +
+        //           " " +
+        //           user.address.city +
+        //           "</br></br><hr></br>"
+        //       );
+        //       console.log(user);
+        //     }
+        //   });
+        // });
 
-        $("#buttonUsers").click(function () {
-          $.get("https://jsonplaceholder.typicode.com/users", function (
-            data,
-            status
-          ) {
-            // window.alert(user.name);
-            for (let i = 0; i < data.length; i++) {
-              var usuari = data[i];
-              console.log(usuari);
-              // $("#capa1").append(usuari.name + "</br>");
-              $("#capa2").append(
-                "<div class='targeta'>" +
-                  "<p>" +
-                  usuari.name +
-                  "</p>" +
-                  "</br>" +
-                  "<p>" +
-                  usuari.email +
-                  "</p>" +
-                  "</br>" +
-                  "<p>" +
-                  usuari.phone +
-                  "</p>" +
-                  "</div>"
-              );
+        $("#buttonSel").click(function () {
+          $.get(
+            "https://cors-anywhere.herokuapp.com/https://api.bsmsa.eu/ext/api/bsm/gbfs/v2/en/station_status",
+            function (data, status) {
+              var sels = data.Seleccions;
+              for (let i = 0; i < sels.length; i++) {
+                var sel = sels[i];
+                $("#divSels").append(
+                  "<div class='sel'>" +
+                    "<p>" +
+                    sel.title +
+                    "</p>" +
+                    "</br>" +
+                    "<p>" +
+                    sel.nombrePlaces +
+                    "</p>" +
+                    "</br>" +
+                    "<p>" +
+                    sel.ens +
+                    "</p>" +
+                    "</div>"
+                );
+                console.log(sel);
+              }
             }
-          });
+          );
         });
       });
     </script>
@@ -130,7 +179,11 @@
     <!-- <input type="button" value="Crida" id="buttonCrida" />
     <h1 id="h1Crida"></h1>
     <img id="imgCrida" src="" alt="" /> -->
-    <input type="button" value="Users" id="buttonUsers" />
-    <div id="capa2"></div>
+    <!-- <input type="button" value="Users" id="buttonUsers" />
+    <div id="capa2"></div> -->
+    <!-- <input type="button" value="Users" id="buttonCapaNew" />
+    <div id="capaNew"></div> -->
+    <input type="button" value="Seleccions" id="buttonSel" />
+    <div id="divSels"></div>
   </body>
 </html>
