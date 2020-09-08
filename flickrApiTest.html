@@ -1,0 +1,84 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FLICKR API TEST</title>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+      integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="button" value="See Photos" id="flickrButton" />
+    <br />
+    <input type="text" name="search" id="searchInput" />
+    <input type="button" value="Search" id="searchButton" />
+    <br />
+    <div id="res"></div>
+    <div id="flickrDiv"></div>
+    <script>
+      $(function () {
+        $("#flickrButton").click(function () {
+          $.get(
+            "https://www.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=ab481822e3a3ffd44253a624ee0335db&page=2&format=json&nojsoncallback=1",
+            function (data, status) {
+              for (let i = 0; i < data.photos.photo.length; i++) {
+                var photo = data.photos.photo[i];
+                $("#flickrDiv").append(photo.title + "</br>");
+                console.log(photo);
+                $("#flickrDiv").append(
+                  "<img src='https://farm" +
+                    photo.farm +
+                    ".staticflickr.com/" +
+                    photo.server +
+                    "/" +
+                    photo.id +
+                    "_" +
+                    photo.secret +
+                    ".jpg'> </br><hr>"
+                );
+              }
+            }
+          );
+        });
+        $("#searchButton").click(function () {
+          var search = document.getElementById("searchInput").value;
+          $.get(
+            "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=ab481822e3a3ffd44253a624ee0335db&text=" +
+              search +
+              "&format=json&nojsoncallback=1",
+            function (data, status) {
+              $("#res").html("");
+              for (let i = 0; i < data.photos.photo.length; i++) {
+                searchResult = data.photos.photo[i];
+
+                $("#res").append(
+                  "<img src='https://farm" +
+                    searchResult.farm +
+                    ".staticflickr.com/" +
+                    searchResult.server +
+                    "/" +
+                    searchResult.id +
+                    "_" +
+                    searchResult.secret +
+                    ".jpg'> </br><hr>"
+                );
+              }
+            }
+          );
+        });
+      });
+    </script>
+  </body>
+</html>
