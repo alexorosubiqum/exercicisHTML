@@ -17,125 +17,147 @@
       body {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
       }
-      .allStations {
+      #parkingsDiv {
         display: flex;
         flex-wrap: wrap;
-        margin: auto;
+      }
+      .parkings {
+        width: 400px;
+        height: 400px;
+        margin: 10px auto;
         padding: 1%;
-      }
-      .stations {
-        width: 400px;
-        border: 5px solid black;
-        border-radius: 5px;
-      }
-      .greenStations {
-        width: 400px;
-        border: 5px solid black;
-        border-radius: 5px;
-        background-color: green;
-        color: white;
-      }
-      .redStations {
-        width: 400px;
-        border: 5px solid black;
-        border-radius: 5px;
-        background-color: red;
-        color: white;
-      }
-      .yellowStations {
-        width: 400px;
-        border: 5px solid black;
-        border-radius: 5px;
-        background-color: yellow;
         color: black;
-      }
-      .eBikes,
-      .mechBikes {
-        display: flex;
-      }
-      .bikeIcon,
-      .eBikeIcon {
-        width: 70px;
-        height: 70px;
+        background-color: dodgerblue;
+        border: 5px solid black;
         border-radius: 5px;
-        padding: 1%;
+      }
+      .icons {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 5px auto;
+      }
+      .icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+      }
+      .eChargerIcon {
+        background-color: white;
       }
     </style>
   </head>
   <body>
-    <input type="button" value="SEE BIKES STATIONS" id="bikesButton" />
-    <div class="allStations">
-      <!-- <div class="stations">
-        <p class="stationId">Station ID:</p>
-        <p class="bikesAvaliable">Total Bikes avaliable:</p>
-        <p class="mechBikes">Mechanical bikes:</p>
-        <img src="" alt="Mechanical Bikes" />
-        <p class="eBikes">E.Bikes:</p>
-        <img src="" alt="E.Bikes" />
-        <p class="docksAvaliable">Docks avaliable:</p>
-        <p class="stationStatus">Status:</p>
-      </div> -->
-    </div>
-
+    <input type="button" value="See Parkings" id="parkingsButton" />
+    <div id="parkingsDiv"></div>
     <script>
       $(function () {
-        $("#bikesButton").click(function () {
+        $("#parkingsButton").click(function () {
           $.get(
-            "https://api.bsmsa.eu/ext/api/bsm/gbfs/v2/en/station_status",
+            "https://cors-anywhere.herokuapp.com/https://api.bsmsa.eu/ext/api/Aparcaments/ParkingService/Parkings/v1/ParkingDataSheet/opendata",
             function (data, status) {
-              for (let i = 0; i < data.data.stations.length; i++) {
-                var allStations = data.data.stations[i];
-                console.log(allStations);
-                $(".allStations").append(
-                  "<div class='stations' id='stations" +
+              var allParkings = data.ParkingList.Parking;
+              for (let i = 0; i < allParkings.length; i++) {
+                var parking = allParkings[i];
+                console.log(parking);
+
+                ////////////////// HANDICAP ACCESS
+                var handicapIcon = "";
+                if (parking.HandicapAccess == 1) {
+                  handicapIcon +=
+                    "<img class='handicapIcon icon' src='./assets/handicapIcon.png'>";
+                } else {
+                  handicapIcon = "";
+                }
+
+                ////////////////// ELECTRIC CHARGER
+                var eChargerIcon = "";
+                if (parking.ElectricCharger == 1) {
+                  eChargerIcon +=
+                    "<img class='eChargerIcon icon' src='./assets/eChargerIcon.jpg'>";
+                } else {
+                  eChargerIcon = "";
+                }
+
+                ////////////////// WC
+                var wcIcon = "";
+                if (parking.WC == 1) {
+                  wcIcon +=
+                    "<img class='wcIcon icon' src='./assets/wcIcon.png'>";
+                } else {
+                  wcIcon = "";
+                }
+
+                ////////////////// ELEVATOR
+                var elevatorIcon = "";
+                if (parking.Elevator == 1) {
+                  elevatorIcon +=
+                    "<img class='elevatorIcon icon' src='./assets/elevatorIcon.png'>";
+                } else elevatorIcon = "";
+
+                ////////////////// OFFICE
+                var officeIcon;
+                if (parking.Consigna == 1) {
+                  officeIcon +=
+                    "<img class='officeIcon icon' src='./assets/officeIcon.png'>";
+                } else {
+                  officeIcon = "";
+                }
+
+                ////////////////// CAR
+                var car = "";
+                if (parking.ParkingPriceList.VehicleType == "Turisme") {
+                  car =
+                    "<img class = 'carIcon icon' src='./assets/carIcon.png'>";
+                } else {
+                  car = "";
+                }
+
+                ////////////////// MOTO
+                var moto = "";
+                if (parking.ParkingPriceList.VehicleType == "Moto") {
+                  moto =
+                    "<img class = 'motoIcon icon' src='./assets/motorBikeIcon.png'>";
+                } else {
+                  moto = "";
+                }
+
+                ////////////////// BUS
+                var bus = "";
+                if (parking.ParkingPriceList.VehicleType == "Bus") {
+                  bus =
+                    "<img class='busIcon icon'  src='./assets/busIcon.jpg'>";
+                } else {
+                  bus = "";
+                }
+
+                //////////////////////////////////////////////////////
+
+                $("#parkingsDiv").append(
+                  "<div class='parkings' id='parking" +
                     i +
                     "'>" +
-                    "<p class='stationId'>Station ID: " +
-                    allStations.station_id +
+                    "<p class='code'>Codi: " +
+                    parking.ParkingCode +
                     "</p>" +
-                    "<p class='bikesAvaliable'>Total Bikes avaliable: " +
-                    allStations.num_bikes_available +
+                    "<p class='name'>Nom Parking: " +
+                    parking.Name +
                     "</p>" +
-                    "<div class='mechBikes'>" +
-                    "<p class='mechBikes'>Mechanical bikes: " +
-                    allStations.num_bikes_available_types.mechanical +
+                    "<p class='address'>Adreça: " +
+                    parking.Address +
                     "</p>" +
-                    "<img src='./assets/bikeIcon.png' alt='Mechanical Bikes' class='bikeIcon' />" +
+                    "<div id ='icons'" +
+                    i +
+                    ">" +
+                    handicapIcon +
+                    eChargerIcon +
+                    wcIcon +
+                    elevatorIcon +
+                    officeIcon +
                     "</div>" +
-                    "<div class='eBikes'>" +
-                    "<p >E.Bikes: " +
-                    allStations.num_bikes_available_types.ebike +
-                    "</p>" +
-                    "<img src='./assets/eBikeIcon.png' alt='E.Bikes' class='eBikeIcon' />" +
-                    "</div>" +
-                    "<p class='docksAvaliable'>Docks avaliable: " +
-                    allStations.num_docks_available +
-                    "</p>"
+                    "<div class='prices'>" +
+                    "<div class='motorBikesPrice'>" +
+                    +"</div>"
                 );
-                if (allStations.status == "IN_SERVICE") {
-                  "<p class='stationStatus'>Status: In Service" +
-                    "</p>" +
-                    "</div>";
-                } else if (allStations.status !== "IN_SERVICE") {
-                  "<p class='stationStatus'>Status: Not In Service" +
-                    "</p>" +
-                    "</div>";
-                  var greyStations = document.getElementsByClassName(
-                    "stations" + i
-                  );
-                }
-                if ((allStations.num_bikes_available = 1)) {
-                  var redStations = document.getElementById("stations" + i);
-                  redStations.classList.add("redStations");
-                } else if (allStations.num_bikes_available < 5) {
-                  var yellowStations = document.getElementById("stations" + i);
-                  yellowStations.classList.remove("redStations");
-                  yellowStations.classList.add("yellowStations");
-                } else if (allStations.num_bikes_available <= 10) {
-                  var greenStations = document.getElementById("stations" + i);
-                  greenStations.classList.remove("redStations");
-                  greenStations.classList.add("greenStations");
-                }
               }
             }
           );

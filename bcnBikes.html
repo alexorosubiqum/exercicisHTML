@@ -13,16 +13,132 @@
       integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
       crossorigin="anonymous"
     ></script>
+    <style>
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      .allStations {
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+        padding: 1%;
+      }
+      .stations {
+        width: 400px;
+        border: 5px solid black;
+        border-radius: 5px;
+      }
+      .greenStations {
+        width: 400px;
+        border: 5px solid black;
+        border-radius: 5px;
+        background-color: green;
+        color: white;
+      }
+      .redStations {
+        width: 400px;
+        border: 5px solid black;
+        border-radius: 5px;
+        background-color: red;
+        color: white;
+      }
+      .yellowStations {
+        width: 400px;
+        border: 5px solid black;
+        border-radius: 5px;
+        background-color: yellow;
+        color: black;
+      }
+      .eBikes,
+      .mechBikes {
+        display: flex;
+      }
+      .bikeIcon,
+      .eBikeIcon {
+        width: 70px;
+        height: 70px;
+        border-radius: 5px;
+        padding: 1%;
+      }
+    </style>
   </head>
   <body>
+    <input type="button" value="SEE BIKES STATIONS" id="bikesButton" />
+    <div class="allStations">
+      <!-- <div class="stations">
+        <p class="stationId">Station ID:</p>
+        <p class="bikesAvaliable">Total Bikes avaliable:</p>
+        <p class="mechBikes">Mechanical bikes:</p>
+        <img src="" alt="Mechanical Bikes" />
+        <p class="eBikes">E.Bikes:</p>
+        <img src="" alt="E.Bikes" />
+        <p class="docksAvaliable">Docks avaliable:</p>
+        <p class="stationStatus">Status:</p>
+      </div> -->
+    </div>
+
     <script>
       $(function () {
-        $.get("./openDataBCNBikes.json", function (data, status) {
-          for (let i = 0; i < data.data.length; i++) {
-            var stations = data.data.stations[i];
-            console.log(stations);
-          }
-          document.write;
+        $("#bikesButton").click(function () {
+          $.get(
+            "https://api.bsmsa.eu/ext/api/bsm/gbfs/v2/en/station_status",
+            function (data, status) {
+              for (let i = 0; i < data.data.stations.length; i++) {
+                var allStations = data.data.stations[i];
+                console.log(allStations);
+                $(".allStations").append(
+                  "<div class='stations' id='stations" +
+                    i +
+                    "'>" +
+                    "<p class='stationId'>Station ID: " +
+                    allStations.station_id +
+                    "</p>" +
+                    "<p class='bikesAvaliable'>Total Bikes avaliable: " +
+                    allStations.num_bikes_available +
+                    "</p>" +
+                    "<div class='mechBikes'>" +
+                    "<p class='mechBikes'>Mechanical bikes: " +
+                    allStations.num_bikes_available_types.mechanical +
+                    "</p>" +
+                    "<img src='./assets/bikeIcon.png' alt='Mechanical Bikes' class='bikeIcon' />" +
+                    "</div>" +
+                    "<div class='eBikes'>" +
+                    "<p >E.Bikes: " +
+                    allStations.num_bikes_available_types.ebike +
+                    "</p>" +
+                    "<img src='./assets/eBikeIcon.png' alt='E.Bikes' class='eBikeIcon' />" +
+                    "</div>" +
+                    "<p class='docksAvaliable'>Docks avaliable: " +
+                    allStations.num_docks_available +
+                    "</p>"
+                );
+                if (allStations.status == "IN_SERVICE") {
+                  "<p class='stationStatus'>Status: In Service" +
+                    "</p>" +
+                    "</div>";
+                } else if (allStations.status !== "IN_SERVICE") {
+                  "<p class='stationStatus'>Status: Not In Service" +
+                    "</p>" +
+                    "</div>";
+                  var greyStations = document.getElementsByClassName(
+                    "stations" + i
+                  );
+                }
+                if ((allStations.num_bikes_available = 1)) {
+                  var redStations = document.getElementById("stations" + i);
+                  redStations.classList.add("redStations");
+                } else if (allStations.num_bikes_available < 5) {
+                  var yellowStations = document.getElementById("stations" + i);
+                  yellowStations.classList.remove("redStations");
+                  yellowStations.classList.add("yellowStations");
+                } else if (allStations.num_bikes_available <= 10) {
+                  var greenStations = document.getElementById("stations" + i);
+                  greenStations.classList.remove("redStations");
+                  greenStations.classList.add("greenStations");
+                }
+              }
+            }
+          );
         });
       });
     </script>
